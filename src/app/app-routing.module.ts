@@ -1,31 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BrandComponent } from './components/brand/brand.component';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { CategoryComponent } from './components/category/category.component';
-import { ProductComponent } from './components/product/product.component';
-import { BrandFormComponent } from './components/brand/brand-form/brand-form.component';
-import { CategoryFormComponent } from './components/category/category-form/category-form.component';
-import { ProductFormComponent } from './components/product/product-form/product-form.component';
-import { BrandFormUpdateComponent } from './components/brand/brand-form-update/brand-form-update.component';
-import { CategoryFormUpdateComponent } from './components/category/category-form-update/category-form-update.component';
-import { ProductFormUpdateComponent } from './components/product/product-form-update/product-form-update.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AuthGuard } from './guards/auth.guard';
+import { CustomerFormComponent } from './components/customer/customer-form/customer-form.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'brand', pathMatch:'full'},
-  {path:'home', component:HomeComponent},
-  {path:'brand', component:BrandComponent},
-  {path:'category', component:CategoryComponent},
-  {path:'product', component:ProductComponent},
-  {path:'', children:[
-    {path:'brand/create-brand', component:BrandFormComponent},
-    {path:'brand/update-brand/:id', component:BrandFormUpdateComponent},
-    {path:'category/create-category', component:CategoryFormComponent},
-    {path:'category/update-category/:id', component:CategoryFormUpdateComponent},
-    {path:'product/create-product', component:ProductFormComponent},
-    {path:'product/update-product/:id', component:ProductFormUpdateComponent}
-  ]}
+  {path:'', redirectTo:'login', pathMatch:'full'},
+  {path:'login', component:LoginComponent},
+  {path:'forgot-password', component:ForgotPasswordComponent},
+  {path:'customer-register', component:CustomerFormComponent},
+  {path:'admin', 
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule)
+  },
+  {path:'**', component:NotFoundComponent}
 ];
 
 @NgModule({

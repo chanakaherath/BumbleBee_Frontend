@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Customers</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Home</li>
+            <li class="breadcrumb-item active">Customers</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Customers</h3>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="card-subtitle">This is to define customer list.</p>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Birthday</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of customers">
+                        <td>{{customer.firstName}}</td>
+                        <td>{{customer.lastName}}</td>
+                        <td>{{customer.birthday}}</td>
+                        <td>{{customer.user.username}}</td>
+                        <td>{{customer.user.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Brands</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Home</li>
+            <li class="breadcrumb-item active">Brands</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Brands</h3>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="card-subtitle">This is to define brand list.</p>
+                </div>
+                <div><button type="button" class="btn btn-primary btn-sm" routerLink="/admin/brand/create-brand">Create
+                        New</button></div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!-- <th scope="col">#</th> -->
+                        <th>Brand Name</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let brand of brands">
+                        <!-- <th scope="row">1</th> -->
+                        <td>{{brand.name}}</td>
+                        <td>{{brand.description}}</td>
+                        <td>{{brand.status}}</td>
+                        <td>
+                            <button class="btn btn-info" (click)="updateBrand(brand.id)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteBrand(brand.id)"
+                                style="margin-left: 10px">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>Products</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Home</li>
+            <li class="breadcrumb-item active">Products</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Products</h3>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="card-subtitle">This is to define product list.</p>
+                </div>
+                <div><button type="button" class="btn btn-primary btn-sm" routerLink="/admin/product/create-product">Create New</button></div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!-- <th scope="col">#</th> -->
+                        <th>Product Name</th>
+                        <th>Product Code</th>
+                        <th>Brand</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <!-- <th scope="row">1</th> -->
+                        <td>{{product.name}}</td>
+                        <td>{{product.code}}</td>
+                        <td>{{product.brand.name}}</td>
+                        <td>{{product.category.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.status}}</td>
+                        <td>
+                            <button class="btn btn-info" (click)="updateProduct(product.id)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteProduct(product.id)" style="margin-left: 10px">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

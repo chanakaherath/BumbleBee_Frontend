@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: 25rem; height: 45rem;">
+        <div class="card-body">
+            <!-- <div class="text-center">
+                <fa-icon [icon]="faLock" class="fa-3x"></fa-icon>
+            </div> -->
+            <div class="card-title text-center"><h3>Add Customer</h3></div>
+
+            <form (ngSubmit)="onSubmit()">
+                <h4><u>Basic Info</u></h4>
+                <div class="mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="customer.firstName" name="firstName"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="customer.lastName" name="lastName"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Birthday</label>
+                    <input type="text" class="form-control" [(ngModel)]="customer.birthday" name="birthday"/>
+                </div><br>
+                <h4><u>User Details</u></h4>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="customer.user.username" name="username"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" [(ngModel)]="customer.user.email" name="email"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="customer.user.password" name="password"/>
+                </div>
+                <div class="d-flex justify-content-center">
+                <input type="submit" class="btn btn-primary" value="Submit" name="">
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>

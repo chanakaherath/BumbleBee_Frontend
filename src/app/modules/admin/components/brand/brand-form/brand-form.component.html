@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Brands</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Home</li>
+            <li class="breadcrumb-item active">Brands</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Add Brand</h3>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="card-subtitle">This is to define new brand.</p>
+                </div>
+            </div>&nbsp;
+
+            <form (ngSubmit)="onSubmit()">
+
+                <div class="mb-3">
+                    <label>Brand Name</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="brand.name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label>Brand Description</label>
+                    <input type="text" class="form-control" id="description" [(ngModel)]="brand.description"
+                        name="description">
+                </div>
+
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+</div>

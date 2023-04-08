@@ -1,1 +1,29 @@
-<p>login works!</p>
+<!-- <div class="d-flex align-items-center"> -->
+    <div class="d-flex justify-content-center" style="margin-top: 130px;">
+        <div class="card text-center" style="width: 25rem; height: 20rem;">
+            <div class="card-body">
+                <!-- <div class="text-center">
+                    <fa-icon [icon]="faLock" class="fa-3x"></fa-icon>
+                </div> -->
+                <div class="card-title">Welcome</div>
+                <p class="card-text" style="color: lightslategray; text-align: center;">Please enter your login</p>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email"
+                            name="email" formControlName="email" />
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="password" placeholder="Password" class="form-control"
+                            formControlName="password" name="password" formControlName="password" />
+                    </div>
+                    <input type="submit" class="btn btn-primary w-100" value="Login" name="">
+                </form>
+
+            </div>
+            <div class="card-footer text-body-secondary">
+                Are you a customer?&nbsp;&nbsp;<a routerLink="/customer-register">Register</a>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
